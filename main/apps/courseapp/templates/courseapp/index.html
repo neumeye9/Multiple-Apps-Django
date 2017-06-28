@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Courses</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'courseapp/css/style.css' %}" charset="utf-8">
+  </head>
+  <body>
+    <div id = "header">
+      <h3>Add a new course</h3>
+      <form id = "input" action="/courses" method="post">
+        {% csrf_token %}
+        <div id = "labels">
+          <label for "name">Name:</label><br><br>
+          <label for "description">Description:</label>
+        </div>
+        <div id = "textboxes">
+          <input class='namebox' type='text' name='name'><br>
+          <input class='descbox' type='text' name='description'><br>
+        </div>
+        <input class = "button" type='submit' value='Add'>
+      </form>
+      <h3>Courses</h3>
+      <table>
+        <tr>
+          <th>Course Name</th>
+          <th>Description</th>
+          <th>Date Added</th>
+          <th>Actions</th>
+        </tr>
+      {% for course in courses %}
+        <tr>
+          <td>{{course.name}}</td>
+          <td>{{course.description}}</td>
+          <td>{{course.created_at}}</td>
+          <td><a href = "/remove/{{course.id}}">remove</a></td>
+        </tr>
+      {% endfor %}
+      </table>
+
+      <form action="/books">
+        {% csrf_token %}
+        <input type="submit" value="Get Books">
+      </form>
+
+      <a href="/" method='post'>Logout</a>
+    </div>
+  </body>
+</html>

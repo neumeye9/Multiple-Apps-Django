@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration Django</title>
+</head>
+<body>
+    <h1>Registration</h1>
+
+    <form action="/register" method="post">
+        {% csrf_token %}
+        <label for="first">First Name:</label>
+        <input type="text" name="first_name">
+        <br>
+        <br>
+        <label for="last">Last Name:</label>
+        <input type="text" name="last_name">
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+        <br>
+        <br>
+        <label for="confirmpass">Confirm Password:</label>
+        <input type="password" name="confirmpass">
+        <br>
+        <br>
+        <input type="submit" value="Register">
+    </form>
+    <br>
+    <br>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> {{message}} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+    <br>
+    <form action="/login" method="post">
+        {% csrf_token %}
+        <label for="logemail">Email:</label>
+        <input type="text" name="logemail">
+        <br>
+        <br>
+        <label for="logpassword">Password:</label>
+        <input type="password" name="logpassword">
+        <br>
+        <br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

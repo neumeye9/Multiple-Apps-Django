@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Courses</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'courseapp/css/style.css' %}" charset="utf-8">
+  </head>
+  <body>
+    <div id = "header">
+      <h3>Are you sure you want to delete the following course?</h3>
+      <div id = "titles">
+        <p>Name:</p>
+        <p>Description:</p>
+      </div>
+      <div id = "content">
+        <p>{{course.name}}</p>
+        <p>{{course.description}}</p>
+      </div><br>
+      <form class = "no" action="/">
+        <input type="submit" value="No"/>
+      </form>
+      <form class = "yes" action="/delete/{{course.id}}">
+        <input type="submit" value="Yes! I want to delete this."/>
+      </form>
+    </div>
+  </body>
+</html>

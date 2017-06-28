@@ -1,0 +1,95 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#header{
+  margin: 15px;
+  background-color: #e0e0e0;
+  padding: 25px;
+}
+h3{
+  font-family: arial, sans-serif;
+  text-align: center;
+  color: #00006b;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 750;
+  margin-left: 200px;
+  margin-bottom: 50px;
+}
+th{
+  background-color: #e0e0e0;
+  color: #00006b;
+  margin-top: 25px;
+  text-decoration: underline;
+}
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #00006b;
+  color: white;
+  font-size: 14px;
+}
+tr:nth-child(odd) {
+  background-color: #b9b9b9;
+  color: #00006b;
+  font-size: 14px;
+}
+#input{
+  margin-left: 350px;
+}
+form label{
+  font-family: arial, sans-serif;
+  color: #00006b;
+  display: block;
+}
+#labels{
+  display: inline-block;
+}
+#textboxes{
+  display: inline-block;
+}
+.descbox{
+  margin-top: 10px;
+  height: 50px;
+  width: 300px;
+}
+.namebox{
+  height: 30px;
+  width: 300px;
+}
+#titles{
+  display: inline-block;
+  color: #00006b;
+  font-style: bold;
+  margin-left: 360px;
+  margin-bottom: 15px;
+}
+#content{
+  display: inline-block;
+  margin-left: 5px;
+}
+.no{
+  display: inline-block;
+  width: 20px;
+  padding: 10px;
+  margin-left: 350px;
+}
+.no input{
+  background-color: #b9b9b9;
+}
+.yes{
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  color: red;
+}
+.yes input{
+  background-color: red;
+}
